@@ -4,18 +4,11 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import { userRouter } from "./router.js";
+import userRouter from "./routers/userRouter.js";
+import videoRouter from "./routers/videoRouter.js";
+import globalRouter from "./routers/globalRouter.js";
 
 const app = express();
-
-const handleHome = (req, res) => {
-  //console.log(req);
-  res.send("hello from home");
-};
-
-function handleProfile(req, res) {
-  res.send("Profile!!!!");
-}
 
 //app.use(morgan("tiny"));
 app.use(cookieParser());
@@ -24,17 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(helmet());
 
-/*
-const middleware = (req, res, next) => {
-  res.send("not happening"); // disconnet middleware
-};
-*/
-
-//app.get("/",betweenHome, handleHome);
-app.get("/", handleHome);
-
-app.get("/profile", handleProfile);
-
+app.use("/", globalRouter);
 app.use("/user", userRouter);
+app.use("/video", videoRouter);
 
 export default app;
