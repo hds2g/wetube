@@ -9,10 +9,10 @@ Cloing Youtube with Vanilla and NodeJS
 - [x] Login
 - [x] Search
 - [ ] User Detail
-- [ ] Edit Profile
-- [ ] Change Password
-- [ ] Upload Video
-- [ ] Video Detail
-- [ ] Edit Video
+- [x] Edit Profile
+- [x] Change Password
+- [x] Upload Video
+- [x] Video Detail
+- [x] Edit Video
 
 
