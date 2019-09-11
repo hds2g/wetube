@@ -20,7 +20,7 @@ console.log(bar); // true
   } = req;
 
   //res.render("search", { pageTitle: "Search", searchingBy: searchingBy });
-  res.render("search", { pageTitle: "Search", searchingBy });
+  res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
 
 export const upload = (req, res) =>
