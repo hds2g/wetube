@@ -13,7 +13,7 @@ export const home = async (req, res) => {
 };
 
 export const search = (req, res) => {
-  //const searchingBy = req.query.term;
+  // const searchingBy = req.query.term;
 
   // object destructuring
   /*
@@ -28,7 +28,7 @@ console.log(bar); // true
   } = req;
 
   //res.render("search", { pageTitle: "Search", searchingBy: searchingBy });
-  res.render("search", { pageTitle: "Search", searchingBy, videos });
+  res.render("search", { pageTitle: "Search", searchingBy });
 };
 
 export const getUpload = (req, res) =>
