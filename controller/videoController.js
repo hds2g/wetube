@@ -3,12 +3,12 @@ import Video from "../models/Video";
 
 export const home = async (req, res) => {
   try {
-    const videos = await Video.find({});
-    //console.log(videos);
-    res.render("home", { pageTitle: "Home", videos });
+    const uploadedVideo = await Video.find({});
+    console.log(uploadedVideo);
+    res.render("home", { pageTitle: "Home", videos: uploadedVideo }); // 해당 페이지로 가면서 { ~ }안에 있는 데이터도 같이 전달 됨, 그래서 pug/mixin에서도 사용가능
   } catch (error) {
     console.log(error);
-    res.render("home", { pageTitle: "Home", videos: [] });
+    res.render("home", { pageTitle: "Home", uploadedVideo: [] });
   }
 };
 

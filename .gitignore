@@ -91,5 +91,5 @@ typings/
 
 package-lock.json
 
-# Upload Video Files
-videos/
+# Upload Files
+uploads/
