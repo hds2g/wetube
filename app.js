@@ -15,6 +15,7 @@ const app = express();
 app.set("view engine", "pug");
 
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 //app.use(morgan("tiny"));
 app.use(helmet());
 app.use(cookieParser());

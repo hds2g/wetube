@@ -93,3 +93,6 @@ package-lock.json
 
 # Upload Files
 uploads/
+
+# statis files
+static/
