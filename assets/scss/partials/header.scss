@@ -2,9 +2,9 @@
   background-color: $red;
   margin-bottom: 50px;
   .header__wrapper {
-    padding: 5px 0px;
+    padding: 5px 10px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; // 상단과 하단은 여백을 주지 말고, 좌측과 우측의 여백을 자동으로(auto)
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -12,7 +12,7 @@
     .header__column {
       i {
         color: white;
-        font-size: 40px;
+        font-size: 30px;
       }
       &:nth-child(2) {
         width: 100%;
