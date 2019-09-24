@@ -7,7 +7,7 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "Wetube";
   res.locals.routes = routes;
   res.locals.user = req.user || null;
-  console.log("localsMiddleware");
+  //console.log("localsMiddleware");
   console.log(req.user);
   next();
 };
