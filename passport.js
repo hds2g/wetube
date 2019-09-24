@@ -20,12 +20,13 @@ passport.use(
     githubLoginCallback
   )
 );
-passport.use(
+
+https: passport.use(
   new FacebookStragegy(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SECRET,
-      callbackURL: `https://strange-starfish-27.localtunnel.me${routes.facebookLoginCallback}`,
+      callbackURL: `https://splendid-crab-82.localtunnel.me${routes.facebookLoginCallback}`,
       profileFields: ["id", "displayName", "photos", "email"],
       scope: ["public_profile", "email"]
     },
