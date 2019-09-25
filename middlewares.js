@@ -9,7 +9,7 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.routes = routes;
   res.locals.loggedUser = req.user || null;
   //console.log("localsMiddleware");
-  console.log(req.user);
+  //console.log(req.user);
   next();
 };
 
