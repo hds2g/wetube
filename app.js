@@ -39,6 +39,7 @@ app.use(
     store: new CoockieStore({ mongooseConnection: mongoose.connection })
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
