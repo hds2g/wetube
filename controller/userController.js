@@ -107,6 +107,7 @@ export const postFacebookLogin = (req, res) => {
 };
 
 export const logout = (req, res) => {
+  console.log("logout");
   req.logout();
   res.redirect(routes.home);
 };
