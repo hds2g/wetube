@@ -7,7 +7,7 @@ export const getJoin = (req, res) => {
 };
 
 export const postJoin = async (req, res, next) => {
-  console.log(req.body); // by bodyParser
+  //console.log(req.body); // by bodyParser
   const {
     body: { name, email, password, password2 }
   } = req;
@@ -42,7 +42,7 @@ export const githubLogin = passport.authenticate("github");
 
 //export const githubLoginCallback = async (accessToken, refreshToken, profile, cb) => {
 export const githubLoginCallback = async (_, __, profile, cb) => {
-  console.log(profile, cb);
+  //console.log(profile, cb);
   const {
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
@@ -114,15 +114,17 @@ export const logout = (req, res) => {
 export const getMe = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail", user: req.user });
 };
+
 export const userDetail = async (req, res) => {
   const {
     params: { id }
   } = req;
-  console.log(req);
+  //console.log(req);
 
   try {
-    const user = await User.findById(id);
-
+    const user = await User.findById(id).populate("videos");
+    console.log("test------------");
+    console.log(user.videos);
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     res.redirect(routes.home);
