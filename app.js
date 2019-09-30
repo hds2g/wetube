@@ -13,6 +13,7 @@ import routes from "./routes";
 import userRouter from "./routers/userRouter.js";
 import videoRouter from "./routers/videoRouter.js";
 import globalRouter from "./routers/globalRouter.js";
+import apiRouter from "./routers/apiRouter.js";
 
 import "./passport";
 
@@ -48,5 +49,6 @@ app.use(localsMiddleware);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
