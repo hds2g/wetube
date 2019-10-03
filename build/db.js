@@ -20,7 +20,7 @@ var handlOpen = function handlOpen() {
 };
 
 var handleError = function handleError() {
-  return console.log("\u274C Error on DB Connection: ".concat(error));
+  return console.log("❌ Error on DB Connection");
 };
 
 db.once("open", handlOpen);

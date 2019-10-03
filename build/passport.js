@@ -19,7 +19,8 @@ _passport["default"].use(_User["default"].createStrategy());
 _passport["default"].use(new _passportGithub["default"]({
   clientID: process.env.GH_ID,
   clientSecret: process.env.GH_SECRET,
-  callbackURL: "http://localhost:4000".concat(_routes["default"].gitHubCallback)
+  callbackURL: "http://localhost:4000".concat(_routes["default"].gitHubCallback) //`https://secret-forest-59446.herokuapp.com${routes.gitHubCallback}`
+
 }, _userController.githubLoginCallback));
 
 https: _passport["default"].use(new _passportFacebook["default"]({
