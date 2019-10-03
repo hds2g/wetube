@@ -9,6 +9,11 @@ import {
 import routes from "./routes";
 
 passport.use(User.createStrategy());
+console.log(
+  process.env.PRODUCTION
+    ? `https://secret-forest-59446.herokuapp.com${routes.gitHubLoginCallback}`
+    : `http://localhost:4000${routes.gitHubLoginCallback}`
+);
 
 passport.use(
   new GithubStrategy(
@@ -16,14 +21,14 @@ passport.use(
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
       callbackURL: process.env.PRODUCTION
-        ? `https://secret-forest-59446.herokuapp.com${routes.githubCallback}`
-        : `http://localhost:4000${routes.githubCallback}`
+        ? `https://secret-forest-59446.herokuapp.com${routes.gitHubLoginCallback}`
+        : `http://localhost:4000${routes.gitHubLoginCallback}`
     },
     githubLoginCallback
   )
 );
 
-https: passport.use(
+passport.use(
   new FacebookStragegy(
     {
       clientID: process.env.FB_ID,
@@ -35,5 +40,6 @@ https: passport.use(
     facebookLoginCallback
   )
 );
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

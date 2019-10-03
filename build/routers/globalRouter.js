@@ -30,7 +30,7 @@ globalRouter.get(_routes["default"].home, _videoController.home);
 globalRouter.get(_routes["default"].search, _videoController.search);
 globalRouter.get(_routes["default"].logout, _middlewares.onlyPrivate, _userController.logout);
 globalRouter.get(_routes["default"].gitHub, _userController.githubLogin);
-globalRouter.get(_routes["default"].gitHubCallback, _passport["default"].authenticate("github", {
+globalRouter.get(_routes["default"].gitHubLoginCallback, _passport["default"].authenticate("github", {
   failureRedirect: "/login"
 }), _userController.postGithubLogin);
 globalRouter.get(_routes["default"].me, _userController.getMe);

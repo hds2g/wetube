@@ -16,14 +16,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 _passport["default"].use(_User["default"].createStrategy());
 
+console.log(process.env.PRODUCTION ? "https://secret-forest-59446.herokuapp.com".concat(_routes["default"].gitHubLoginCallback) : "http://localhost:4000".concat(_routes["default"].gitHubLoginCallback));
+
 _passport["default"].use(new _passportGithub["default"]({
   clientID: process.env.GH_ID,
   clientSecret: process.env.GH_SECRET,
-  callbackURL: "http://localhost:4000".concat(_routes["default"].gitHubCallback) //`https://secret-forest-59446.herokuapp.com${routes.gitHubCallback}`
-
+  callbackURL: process.env.PRODUCTION ? "https://secret-forest-59446.herokuapp.com".concat(_routes["default"].gitHubLoginCallback) : "http://localhost:4000".concat(_routes["default"].gitHubLoginCallback)
 }, _userController.githubLoginCallback));
 
-https: _passport["default"].use(new _passportFacebook["default"]({
+_passport["default"].use(new _passportFacebook["default"]({
   clientID: process.env.FB_ID,
   clientSecret: process.env.FB_SECRET,
   callbackURL: "https://splendid-crab-82.localtunnel.me".concat(_routes["default"].facebookLoginCallback),

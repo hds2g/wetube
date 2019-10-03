@@ -31,7 +31,7 @@ globalRouter.get(routes.logout, onlyPrivate, logout);
 
 globalRouter.get(routes.gitHub, githubLogin);
 globalRouter.get(
-  routes.gitHubCallback,
+  routes.gitHubLoginCallback,
   passport.authenticate("github", { failureRedirect: "/login" }),
   postGithubLogin
 );
