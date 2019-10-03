@@ -15,7 +15,9 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: `http://localhost:4000${routes.gitHubCallback}`
+      callbackURL: process.env.PRODUCTION
+        ? `https://secret-forest-59446.herokuapp.com${routes.gitHubCallback}`
+        : `http://localhost:4000${routes.gitHubCallback}`
     },
     githubLoginCallback
   )
