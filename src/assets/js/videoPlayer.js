@@ -15,6 +15,7 @@ const registerView = () => {
     method: "POST"
   });
 };
+
 function handlePlayClick() {
   if (videoPlayer.paused) {
     videoPlayer.play();
